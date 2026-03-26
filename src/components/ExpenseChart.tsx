@@ -14,8 +14,10 @@ const ExpenseChart = ({ income, expenses }: Props) => {
   const COLORS = ["#16a34a", "#ef4444"];
 
   return (
-    <div className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm hover:shadow-md">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">Overview</h3>
+    <div className="bg-white/80 backdrop-blur-md border border-white/40 p-6 rounded-2xl shadow-sm hover:shadow-md transition">
+      <h3 className="text-lg font-semibold text-gray-900 mb-4">
+        Financial Overview
+      </h3>
 
       <div className="flex gap-4 mb-4 text-sm">
         <span className="flex items-center gap-1">

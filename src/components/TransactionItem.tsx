@@ -8,23 +8,25 @@ const TransactionItem = ({
   onDelete: (id: number) => void;
 }) => {
   return (
-    <div className="flex justify-between items-center bg-white hover:bg-gray-50 border border-gray-200 p-4 rounded-lg hover:shadow-md transition">
+    <div className="flex justify-between items-center bg-white/80 backdrop-blur-md border border-white/40 p-4 rounded-xl shadow-sm hover:shadow-md transition duration-200">
       <div>
-        <p className="text-gray-900 font-medium">{transaction.title}</p>
-        <p className="text-sm text-gray-500">{transaction.date}</p>
+        <p className="text-gray-900 font-medium text-sm">{transaction.title}</p>
+        <p className="text-xs text-gray-400 mt-1">{transaction.date}</p>
       </div>
-      <p
-        className={`font-semibold ${transaction.type === "income" ? "text-green-600" : "text-red-500"}`}
-      >
-        {transaction.type === "income" ? "+" : "-"}₦
-        {transaction.amount.toLocaleString()}
-      </p>
-      <button
-        onClick={() => onDelete(transaction.id)}
-        className="text-gray-400 border border-gray-300 rounded-md p-1 hover:text-red-500 hover:border-red-500 hover:scale-105 shadow-sm hover:shadow-md transition"
-      >
-        ✕
-      </button>
+      <div className="flex items-center gap-4">
+        <p
+          className={`font-semibold text-sm ${transaction.type === "income" ? "text-green-600" : "text-red-500"}`}
+        >
+          {transaction.type === "income" ? "+" : "-"}₦
+          {transaction.amount.toLocaleString()}
+        </p>
+        <button
+          onClick={() => onDelete(transaction.id)}
+          className="text-gray-400 hover:text-red-500 transition hover:scale-110"
+        >
+          ✕
+        </button>
+      </div>
     </div>
   );
 };

@@ -8,10 +8,10 @@ type StatCardProps = {
 const StatCard = ({ title, amount, textColor, borderColor }: StatCardProps) => {
   return (
     <div
-      className={`bg-white border border-gray-200 rounded-xl p-5 shadow-md hover:shadow-lg border-t-4 ${borderColor} transition`}
+      className={`bg-white/80 backdrop-blur-md border border-gray-200 rounded-2xl p-5 shadow-md hover:shadow-xl transition duration-300 border-t-4 ${borderColor}`}
     >
-      <p className="text-gray-500 text-sm">{title}</p>
-      <h3 className={`text-2xl font-semibold mt-2 ${textColor}`}>{amount}</h3>
+      <p className="text-gray-500 text-xs uppercase tracking-wide">{title}</p>
+      <h3 className={`text-3xl font-bold mt-2 ${textColor}`}>{amount}</h3>
     </div>
   );
 };
